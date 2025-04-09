@@ -65,7 +65,7 @@ router.post('/att_reg/regularize', async (req, res) => {
                 message: 'You cannot apply for more than 2 days in the current month (26th to 25th).'
             });
         }
-
+        // pawann 
         const quarterMonths = getQuarter(moment(DateVal));
         const startOfQuarter = moment(DateVal).month(quarterMonths[0]).startOf('month').toDate();
         const endOfQuarter = moment(DateVal).month(quarterMonths[2]).endOf('month').toDate();
