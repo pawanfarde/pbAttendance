@@ -1,0 +1,15 @@
+{
+    "db": {
+        "connection": "mongodb://horizonqaapp:H%40r!z0nQA2108@65.0.176.149",
+        "name": "lm-api-qa"
+    },
+    "environment": {
+        "name": "Development",
+        "port": "8000",
+        "weburl": "http://localhost:8000",
+        "portalurl": "http://qa.policyboss.com",
+        "google_api_key": "AIzaSyDGHQ8Bqez5QDi4tzorkLU4mRn98uzSYpo",
+        "insurer_env": "",
+        "horizon_app_path": "F:/HorizonAPI/SourceCode"
+    }
+}

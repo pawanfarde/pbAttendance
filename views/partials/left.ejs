@@ -1,0 +1,458 @@
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar">
+    <!-- User Info -->
+    <div class="user-info">
+        <div class="image">
+            
+        </div>
+        <div class="info-container" style="top: 8px;">
+            <div class="btn-group user-helper-dropdown">
+                <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                    <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
+                    <li><a href="javascript:void(0);"><i class="material-icons">build</i>Change Password</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/sign-out" ><i class="material-icons">input</i>Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- #User Info -->
+    <!-- Menu -->
+    <div class="menu">
+        <ul class="list">			
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active product" >
+                <a href="/product">
+                    <i class="material-icons">home</i>
+                    <span>Product</span>
+                </a>
+            </li>
+			<li class="insurer_dashboard">
+                <a href="/insurer_dashboard">
+                    <i class="material-icons">pie_chart</i>
+                    <span>Insurer Dashboard</span>
+                </a>
+            </li>
+			<li class="active insurer_dashboard">
+                <a href="/insurer-tech-analysis">
+                    <i class="material-icons">pie_chart</i>
+                    <span>Insurer Tech Analysis</span>
+                </a>
+            </li>			
+            <li class="my_dashboard">
+                <a href="/my_daily">
+                    <i class="material-icons">pie_chart</i>
+                    <span>My Dashboard</span>
+                </a>
+            </li>  
+			<li class="insurer mapping">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">swap_calls</i>
+                    <span>Mapping Activity</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/vehicles">Vehicle Mapping</a>
+                    </li>
+                    <!--<li>
+                        <a href="/rtos">RTO Mapping</a>
+                    </li>-->
+
+                </ul>
+            </li>	
+            <li class="admin">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">email</i>
+                    <span>Email Inbox</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/email_inbox/onlinepolicy">OnlinePolicy</a>
+                    </li>                    
+                    <li>
+                        <a href="/email_inbox/customercare">CustomerCare</a>
+                    </li>
+                    <li>
+                        <a href="/email_inbox/techsupport">TechSupport</a>
+                    </li>
+                </ul>
+            </li>            
+            <!--<li>
+                <a href="/realtime">
+                    <i class="material-icons">assessment</i>
+                    <span>Real Time</span>
+                </a>
+            </li>-->
+            <li class="my_transaction">
+                <a href="/my_transaction">
+                    <i class="material-icons">text_fields</i>
+                    <span>My Transaction</span>
+                </a>
+            </li>
+            <li class="my_documents">
+                <a href="/my_document">
+                    <i class="material-icons">text_fields</i>
+                    <span>My Documents</span></a>
+            </li>			
+			<li class="my_leads">
+                <a href="/lead_list">
+                    <i class="material-icons">view_list</i>
+                    <span>My Leads</span>
+                </a>
+            </li>
+            <li class="sale">
+                <a href="/my_sale">
+                    <i class="material-icons">attach_money</i>
+                    <span>My Sale</span>
+                </a>
+            </li>
+			<li class="my_erp_mis" style="display:none;">
+                <a href="/my_erp">
+                    <i class="material-icons">text_fields</i>
+                    <span>LERP Business</span>
+                </a>
+            </li>
+            <li class="tickets">
+                <a href="javascript:void(0);" id="li_ticket" class="menu-toggle" >
+                    <i class="material-icons"> view_list</i>
+                    <span>Tickets</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/tickets">Create Ticket</a>
+                    </li>
+                    <li>
+                        <a href="/my_ticket_dashboard" id="my_tickets">My Tickets</a>
+                    </li>
+                    <li>
+                        <a href="/my_ticket" id="tickets_list">Tickets List</a>
+                    </li>
+                    <li> 
+                        <a href="/endorsement" id="tktendorsement" class=" waves-effect waves-block">Endorsement</a>
+                    </li>
+
+                </ul>
+            </li>		
+            <li class="attendence">
+                <a href="javascript:void(0);" id="li_attendance" class="menu-toggle">
+                    <i class="material-icons"> view_list</i>
+                    <span>Attendance</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/attendence_self">My Current Attendance</a>
+                    </li>
+                    <li>
+                        <a href="/attendence_team" id="my_tickets">Direct Team Current Attendance</a>
+                    </li>
+                    <li>
+                        <a href="/holiday" id="my_tickets">Holiday</a>
+                    </li>  
+                    <li>
+                        <a href="/attendance_regularization" id="my_tickets">Attendance Regularization</a>
+                    </li>  
+                </ul>
+            </li>
+			<li class="inspection">
+                <a href="/inspection_list" class="menu-toggle">
+                    <i class="material-icons"> build</i>
+                    <span>My Inspection</span>
+                </a>
+            </li>
+            <li class="posp">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">person</i>
+                    <span>POSP</span>
+                </a>
+                <ul class="ml-menu">
+                    <li  class="developer" style="display:none">
+                        <a href="/posp_daily">POSP Dashboard</a>
+                    </li>
+                    <li  class="developer" style="display:none"> 
+                        <a href="/posp_summary">POSP Summary</a>
+                    </li>
+                    <li>
+                        <a href="/posp_list">POSP List</a>
+                    </li>
+                    <li  class="developer">
+                        <a href="/posp_transaction">POSP Transaction</a>
+                    </li>
+                    <li  class="developer">
+                        <a href="/posp_performance">POSP Performance</a>
+                    </li>
+                    <li  class="developer">
+                        <a href="/posp_rm_list">POSP RM Performance</a>
+                    </li>
+                </ul>
+            </li>            
+            <li class="Admin dsa">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">person</i>
+                    <span>DSA</span>
+                </a>
+                <ul class="ml-menu">
+                    <li class="developer" style="display:none">
+                        <a href="/dsa_daily">DSA Dashboard</a>
+                    </li>
+                    <li class="developer" style="display:none">
+                        <a href="/dsa_summary">DSA Summary</a>
+                    </li>
+                    <li>
+                        <a href="/dsa_list">DSA List</a>
+                    </li>
+                    <li class="developer" style="display:none">
+                        <a href="/dsa_transaction">DSA Transaction</a>
+                    </li>
+                    <li class="developer" style="display:none">
+                        <a href="/dsa_performance">DSA Performance</a>
+                    </li>
+                    <li class="developer" style="display:none">
+                        <a href="/dsa_rm_list">DSA RM List</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="my_cart">
+                <a href="/my_cart_list" class="menu-toggle">
+                    <i class="material-icons"> build</i>
+                    <span>My Cart</span>
+                </a>
+            </li>
+			<li class="sync_contact">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons"> view_list</i>
+                    <span>Sync Contact</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/payment_history">Payment History</a>
+
+                    </li>
+                    <li>
+                        <a href="/sync_all_contact">Sync Contact List</a>
+
+                    </li>
+                    <li>
+                        <a href="/coming">Sync Contact Now</a>
+
+                    </li>
+					<li>
+                        <a href="/sync_contact_agent">Agent List</a>
+
+                    </li>
+                    <li style="display:none">
+                        <a href="/sync_match_contact">Match Contact</a>
+                    </li>   
+                </ul>
+            </li>
+			 <li class="lms">
+                <a href="/lms_datas">
+                    <i class="material-icons"> build</i>
+                    <span>LMS system</span>
+                </a>
+                
+            </li>
+            <li class="agent_performance">
+                <a href="/agent_performance">
+                    <i class="material-icons">insert_chart</i>
+                    <span>Agent Performance</span>
+                </a>
+            </li>
+            <li class="rm_performance">
+                <a href="/rm_performance">
+                    <i class="material-icons">insert_chart</i>
+                    <span>RM Performance</span>
+                </a>
+            </li>
+            <!--
+            <li class="developer">
+                <a href="/my_team">
+                    <i class="material-icons">people</i>
+                    <span>My Team</span>
+                </a>
+            </li>
+            <li class="developer">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">person</i>
+                    <span>DIRECT</span>
+                </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="/cse_daily">CSE Dashboard</a>
+                    </li>                    
+                    <li>
+                        <a href="/cse_list">CSE List</a>
+                    </li>
+                    <li>
+                        <a href="/cse_transaction">CSE Transaction</a>
+                    </li>
+                    <li>
+                        <a href="/cse_performance">CSE Performance</a>
+                    </li>
+                </ul>
+            </li>-->
+        </ul>
+    </div>
+    <!-- #Menu -->    
+    <!-- Footer -->
+    <div class="legal">
+		<div style="padding:5px;text-align:center;">
+            <a href="https://www.policyboss.com" target="BLANK"  style="width:100px;cursor: pointer;" > 
+				<img style="width:100px;" src="https://horizon.policyboss.com/images/insurance.png">
+			</a>
+        </div>
+        <!--<div class="copyright">
+            &copy; 2019 - 2020 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+        </div>
+        <div class="version">
+            <b>Version: </b> 1.0.5
+        </div>-->
+    </div>
+    <!-- #Footer -->
+    <script>
+		var const_menu = {
+			'SuperAdmin' : {}
+		}
+		var is_developer = false;
+		var is_dsa_list = false;
+		var is_posp_list = false;
+		var is_insurer = false;
+		var is_mapping = false;
+		var is_channel_head = false;
+        function change_password_popup() {
+            $('#mdChangePassword').modal('show');
+        }
+        function change_password() {
+            if ($('#new_password').val() !== '' && $('#new_password').val() === $('#confirm_password').val()) {
+                if (confirm('Sure to change Password?')) {
+                    $.ajax({
+                        method: "POST",
+                        url: CONST_HORIZON_URL + "/report/change_password",
+                        data: {
+                            "current_password": $('#current_password').val(),
+                            "new_password": $('#new_password').val()
+                        }
+                    }).done(function (response) {
+                        console.log('change_password', response);
+                        $('#mdChangePassword').modal('hide');
+                    });
+                }
+            }
+        }
+		
+		// if (CONST_SESSION.role_detail.role.indexOf('Developer') > -1) {
+		// 	is_developer = true;
+		// }
+		// if (CONST_SESSION.role_detail.role.indexOf('Insurer') > -1) {
+		// 	is_insurer = true;
+		// }
+		// if (CONST_SESSION.role_detail.role.indexOf('Mapping') > -1) {
+		// 	is_mapping = true;
+		// }
+		// if (CONST_SESSION.role_detail.role.indexOf('ChannelHead') > -1) {
+		// 	is_channel_head = true;
+		// }
+		
+			
+		
+		
+		// if ((CONST_SESSION.role_detail.role.indexOf('CustomerCare') < 0) && (CONST_SESSION.role_detail.role.indexOf('SuperAdmin') > 0 || CONST_SESSION.role_detail.role.indexOf('ChannelHead') > 0 ||
+		// 		CONST_SESSION.role_detail.role.indexOf('ITAdmin') > 0)
+		// 		) {
+		// 	is_posp_list = true;
+		// 	is_dsa_list = true;
+		// } 
+		// if (CONST_SESSION.direct.cnt_dsa > 0 || CONST_SESSION.team.cnt_dsa > 0) {
+		// 	is_dsa_list = true;
+		// } 
+		
+		// if (CONST_SESSION.direct.cnt_posp > 0 || CONST_SESSION.team.cnt_posp > 0) {
+		// 	is_posp_list = true;
+		// }
+
+		
+		
+        window.onload = function () {		
+			if (is_insurer === true) { 		
+					$('.product,.developer, .lms, .admin, .admin, .sale, .sync_contact ,.my_leads, .dsa, .posp, .my_daily, .my_transaction, .my_dashboard , .agent_performance , .rm_performance').remove();
+			}
+			else if (is_channel_head === false && is_mapping === true ) { 		
+					$('.product,.developer, .lms, .admin, .admin, .sale, .sync_contact ,.my_leads, .dsa, .posp, .my_daily, .my_transaction, .my_dashboard , .agent_performance , .rm_performance').remove();
+			}
+			else{
+				$('.insurer_dashboard').remove();
+			
+				if (is_developer === false) {
+					
+				}
+				
+				
+				if (is_dsa_list === false) {
+					$('.dsa').remove();
+				}
+				if (is_posp_list === false) {
+					$('.posp').remove();
+				}
+
+
+				$('.admin').remove();
+
+
+
+				$('.menu li').removeClass('active');
+				$('.menu li [href="' + window.location.pathname + '"]').parent().addClass('active');
+
+				// if (CONST_SESSION.role_detail.role.indexOf('ErpTeam') > 0) {
+				// 	$('.dsa, .posp, .my_daily, .my_transaction, .my_dashboard , .tickets , .agent_performance , .rm_performance').remove();
+				// }
+				// if(['4','6','7'].indexOf(CONST_SESSION.erp_id.toString().charAt(0)) > -1)
+				// {
+				// 	$('.my_erp_mis').show();
+				// }
+			}
+			
+			if (is_insurer === false && is_developer === false && is_mapping === false) {
+				$('.insurer').remove();
+			}
+		
+			
+		//14082020 Khushbu Ticketing
+            $("#li_ticket").click(function () {
+                $.ajax({
+                    type: "GET",
+                    //url: "http://localhost:3000/report/CheckTickitingCategory/" + CONST_SESSION.uid,
+                    url: CONST_HORIZON_URL + "/tickets/CheckTickitingCategory/" + CONST_SESSION.uid,
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        userticket_category = response.join();
+                        if (response.length > 0) {
+                            //role_type = "tickets";
+                            $('#tickets_list').show();
+                        } else {
+                            $('#tickets_list').hide();
+                        }
+
+                    }
+                });
+                var ticket_endo_ss_id = [7601, 7582, 14507, 7626, 8067,16114,114118];
+                // if (ticket_endo_ss_id.indexOf(CONST_SESSION.ss_id) > -1) {
+                //     $('#tktendorsement').show();
+                // } else {
+                //     $('#tktendorsement').hide();
+                // }
+            });
+            // if ([114118,7582,7601,8067].indexOf(CONST_SESSION.ss_id) > -1){
+            //     $('.my_documents').show();
+            // }else{
+            //     $('.my_documents').hide();
+            // }
+        };
+
+    </script>
+</aside>
+<!-- #END# Left Sidebar -->

@@ -1,0 +1,121 @@
+<% /* Content for the `body` section should either be the first thing defined in the view, or it has to be declared just
+    like any other section. */ %>
+    <%- contentFor('body') %>
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+        <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+        <style>
+            .go-btn {
+                width: 80px;
+            }
+
+            .row1.clearfix1 {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .col-style1,
+            .col-style2 {
+                width: 20% !important;
+                text-align: center !important;
+            }
+        </style>
+
+        <div class="container-fluid">
+
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Attendance List</h2>
+                        </div>
+                        <div class="container mt-3">
+                            <h5 class="text-center mb-2">Work Schedule - March 2025</h5>
+                            <table class="table table-bordered table-sm text-center mx-auto" style="width: 97%;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-center">Date</th>
+                                        <th class="text-center">Day</th>
+                                        <th class="text-center">Schedule</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="scheduleTable">
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="container mt-3">
+                            <h5 class="text-center mb-2">Work Summary - March 2025</h5>
+                            <table class="table table-bordered text-center" style="width: 97%;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-center">Total Days</th>
+                                        <th class="text-center">No Schedule</th>
+                                        <th class="text-center">Full Day</th>
+                                        <th class="text-center">WO</th>
+                                        <th class="text-center">Holiday</th>
+                                        <th class="text-center">Leave</th>
+                                        <th class="text-center">Half Day</th>
+                                        <th class="text-center">Absent</th>
+                                        <th class="text-center">Payable Days</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="summaryTable">
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="container">
+                            <table class="table table-bordered text-center" style="width: 97%;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-center">PL</th>
+                                        <th class="text-center">Full CO</th>
+                                        <th class="text-center">ML</th>
+                                        <th class="text-center">HD</th>
+                                        <th class="text-center">Half CO</th>
+                                        <th class="text-center">LWP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <table
+                                    class="table table-bordered table-striped table-hover attendance_list_grid dataTable table-responsive"
+                                    style="font-size: smaller">
+                                    <thead>
+                                        <tr id="attendance_row_key_head"></tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr id="attendance_row_key_foot"></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Js -->
+        <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="/js/pages/master/attendance.js"></script>
+
+
