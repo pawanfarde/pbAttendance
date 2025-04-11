@@ -30,7 +30,7 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
             "time": ObjRequest.time || "",
             "device_id": ObjRequest.device_id || "",
             "Type": ObjRequest.type || "",
-            "Log_Date": "2025-03-29"//log_Date
+            "Log_Date": log_Date
         };
         var timeRegex = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
 
@@ -101,8 +101,8 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
                 "Calc_Attendance": calcAttendance,
                 "Final_Attendance": finalAttendance,
                 "Exception": "",
-                "Created_On": moment().toDate(),
-                "Modified_On": moment().toDate(),
+                "Created_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]"),
+                "Modified_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]"),
                 "Device_Id": obj_Data.device_id,
             };
 
@@ -114,8 +114,8 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
                 "Swipe_In": swipeInTime,
                 "Swipe_Out": swipeOutTime,
                 "Device_Id": obj_Data.device_id,
-                "Created_On": moment().toDate(),
-                "Modified_On": moment().toDate(),
+                "Created_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]"),
+                "Modified_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]")
             };
             if (empShift.Single_Punch === "Yes") {
                 let saved_Entry = new Attendance(obj_Keys);
@@ -158,7 +158,7 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
             let shiftStartTime = moment(shiftDetails[1], "HH:mm")
             let shiftEndTime = moment(shiftDetails[2], "HH:mm");
 
-            let final_Attendance = "Absent", calc_Attendance = "AB", Req_Min = existing_Record.Req_Min
+            let final_Attendance = "Absent", calc_Attendance = "AB", Req_Min = existing_Record.Req_Min ,Exception = ""
             if (shiftDetails[0] === "FLX") {
                 if (calc_Min >= existing_Record.Req_Min) {
                     calc_Attendance = "PR";
@@ -176,6 +176,7 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
                     if (calc_Min >= (existing_Record.Req_Min - 10)) {
                         calc_Attendance = "PR"
                         final_Attendance = "Present";
+                        Exception = "yes"
                     }
                 } else if (swipeInTime.isBetween(shiftStartTime.clone().add(1, 'minutes'), shiftStartTime.clone().add(30, 'minutes'), null, '[]')) {
                     let requiredSwipeOut = shiftEndTime.clone().add(30 + swipeInTime.diff(shiftStartTime, 'minutes'), 'minutes');
@@ -221,7 +222,8 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
                 "Diff": diff,
                 "Calc_Attendance": calc_Attendance,
                 "Final_Attendance": final_Attendance,
-                "Modified_On": moment().toDate(),
+                "Exception": Exception,
+                "Modified_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]")
             };
 
             let Att_updated_Record = await Attendance.findOneAndUpdate(
@@ -239,8 +241,8 @@ router.post("/attendance/punch_in_pawann", upload.single("image"), async functio
                     "Swipe_In": existing_Record.Swipe_In,
                     "Swipe_Out": obj_Data.time,
                     "Device_Id": existing_Record.Device_Id,
-                    "Created_On": moment().toDate(),
-                    "Modified_On": moment().toDate(),
+                    "Created_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]"),
+                    "Modified_On": moment().format("YYYY-MM-DDTHH:mm:ss[Z]")
                 };
 
                 let saved_History = new AttendanceHistory(history_obj);

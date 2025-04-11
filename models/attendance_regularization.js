@@ -17,6 +17,7 @@ const attendance_regularization_Schema = new mongoose.Schema({
     collection: 'attendance_regularizations'
 });
 
+attendance_regularization_Schema.plugin(mongoosePaginate);
 const device_master_data = mongoose.model("attendance_regularizations", attendance_regularization_Schema);
 module.exports = device_master_data;
 
