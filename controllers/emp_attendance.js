@@ -315,8 +315,8 @@ router.post('/attendance/get_attendance', async (req, res) => {
         }
 
         const optionPaginate = {
-            page: parseInt(page),
-            limit: parseInt(limit),
+            page: 1,
+            limit: 30,
             sort: { Log_Date: 1 },
             lean: true
         };

@@ -5,7 +5,7 @@
  */
 /* global exampleDataTable, CONST_SESSION */
 
-console.log("attendance.js loaded")
+    
 var attendance_grid;
 var employee_grid;
 var employee_list_grid;
@@ -113,9 +113,9 @@ function getAttendance(type, selectedStartDate, selectedEndDate) {
         : getCurrentCycleDates(today);
 
     var filter = {
-        'session_id':120258 || CONST_SESSION.session_id,
+        'UID':120258 || CONST_SESSION.session_id,
         'startDate': startDate,
-        'endDate': endDate
+        'endDate': endDate,
     };
 
     if (type) {

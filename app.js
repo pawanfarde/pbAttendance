@@ -113,6 +113,25 @@ app.get('/attendance_regularization', (req, res) => {
     res.render('pages/attendance_regularization');
 });
 
+app.get('/leave_req', (req, res) => {
+    res.locals.title = '';
+    res.render('pages/leave_request');
+});
+
+app.get('/leave_approval', (req, res) => {
+    res.locals.title = '';
+    res.render('pages/leave_approval');
+});
+
+app.get('/regulariz_approval', (req, res) => {
+    res.locals.title = '';
+    res.render('pages/attendance_regularization');
+});
+
+app.get('/regulariz_req', (req, res) => {
+    res.locals.title = '';
+    res.render('pages/regularization_request');
+});
 
 app.get('/sign-in', function (req, res) {
   res.locals.title = 'Horizon';

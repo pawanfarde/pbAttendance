@@ -1,0 +1,158 @@
+<% /* Content for the `body` section should either be the first thing defined in the view, or it has to be declared just
+    like any other section. */ %>
+    <%- contentFor('body') %>
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+        <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+        <style>
+            .error-border {
+                border: 1px solid red !important;
+            }
+
+            .go-btn {
+                width: 80px;
+            }
+
+            .row1.clearfix1 {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .col-style1,
+            .col-style2 {
+                width: 20% !important;
+                text-align: center !important;
+            }
+        </style>
+
+        <div class="container-fluid">
+
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Apply Attendance Regularization Request</h2>
+                        </div>
+                        <div class="body">
+                            <form id="leaveForm">
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <label for="Direction">Date</label>
+                                        
+                                            <select id="dateDropdown" name="dateDropdown" class="form-control show-tick">
+                                                <option value="">--- Select Employee ---</option>
+                                            </select>
+                                      
+                                        <span class="error-message" id="date-dropdown-error"
+                                            style="color: red;font-size: 15px;"></span>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <label for="Direction">Direction</label>
+                                        <select name="Direction" id="Direction" class="form-control show-tick" required>
+                                            <option value="">-- Select Direction --</option>
+                                            <option value="IN">IN</option>
+                                            <option value="OUT">OUT</option>
+                                        </select>
+                                        <span class="error-message" id="direction-error"
+                                            style="color: red;font-size: 15px;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <label for="Time">Time</label>
+                                        <select name="reg-Time" id="reg-Time" class="form-control show-tick" required>
+                                            <option value="">-- Select AR Time --</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="08:30">08:30</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="09:30">09:30</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="10:30">10:30</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:00">19:00</option>
+
+                                        </select>
+                                        <span class="error-message" id="time-error"
+                                            style="color: red;font-size: 15px;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix">
+                                    <div class="col-sm-12">
+                                        <label for="Reason">Reason</label>
+                                        <input type="text" name="reg-Reason" id="reg-Reason" class="form-control"
+                                            required>
+                                        <span class="error-message" id="reg-reason-error"
+                                            style="color: red;font-size: 15px;"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix m-t-20">
+                                    <div class="col-sm-12">
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="applyRegReq()">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="header">
+                            <h2>Regularization Requests - Approval Pending</h2>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <table
+                                    class="table table-bordered table-striped table-hover reg_req_pending_list_grid dataTable table-responsive"
+                                    style="font-size: smaller">
+                                    <thead>
+                                        <tr id="reg_req_pending_row_key_head"></tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr id="reg_req_pending_row_key_foot"></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>Regularization Requests - Action Taken</h2>
+                        </div>
+
+                        <div class="body">
+                            <div class="row clearfix">
+                                <table
+                                    class="table table-bordered table-striped table-hover reg_req_list_grid dataTable table-responsive"
+                                    style="font-size: smaller">
+                                    <thead>
+                                        <tr id="reg_req_row_key_head"></tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr id="reg_req_row_key_foot"></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Js -->
+        <script src="http://localhost:8000/js/pages/master/regularization.js"></script>
+        <script src="../../plugins/sweetalert/sweetalert.min.js"></script>

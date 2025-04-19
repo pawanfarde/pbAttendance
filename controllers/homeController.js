@@ -6,4 +6,9 @@ router.get('/', (req, res) => {
     res.render('pages/attendence_self');
 });
 
+
+
 module.exports = router;
+
+
+

@@ -11,6 +11,8 @@ const attendance_regularization_Schema = new mongoose.Schema({
     "Reson": { type: String },
     "Direction": { type: String },
     "Reg_Req_Status": { type: String, default: "Pending" },
+    "Current_In":{ type:String},
+    "Current_Out":{ type:String },
     "Created_On": { type: Date },  
     "Modified_On": { type: Date }  
 }, {

@@ -1,0 +1,156 @@
+<% /* Content for the `body` section should either be the first thing defined in the view, or it has to be declared just
+    like any other section. */ %>
+    <%- contentFor('body') %>
+
+        <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link rel="stylesheet" type="text/css"
+            href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+        <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+        <style>
+            .error-border {
+                border: 1px solid red !important;
+            }
+            .go-btn {
+                width: 80px;
+            }
+
+            .row1.clearfix1 {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .col-style1,
+            .col-style2 {
+                width: 20% !important;
+                text-align: center !important;
+            }
+        </style>
+
+        <div class="container-fluid">
+
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Employee Leave</h2>
+                        </div>
+                        <div class="container mt-3">
+                            <h5 class="text-center mb-2">Leave balance</h5>
+                            <table class="table table-bordered table-sm text-center mx-auto" style="width: 97%;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-center">Total Leave Balance</th>
+                                        <th class="text-center">Leave Approved</th>
+                                        <th class="text-center">Leave Approval Pending</th>
+                                        <th class="text-center">Current Leave Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leavebalanceTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                   
+
+
+                    <div class="card">
+                        <div class="header">
+                          <h2>Apply Leave</h2>
+                        </div>
+                        <div class="body">
+                            <form id="leaveForm">
+                                <div class="row clearfix">
+                                  <div class="col-sm-6">
+                                    <label for="fromDate" class="form-label">From Date</label>
+                                    <input type="date" class="form-control has-error" id="fromDate" name="Leave_From_Date">
+                                    <span class="error-message" id="from-date-error" style="color: red;font-size: 15px;"></span>
+                                </div>
+                                  <div class="col-sm-6">
+                                    <label for="toDate" class="form-label">To Date</label>
+                                    <input type="date" class="form-control" id="toDate" name="Leave_To_Date">
+                                    <span class="error-message" id="to-date-error" style="color: red;font-size: 15px;"></span>
+                                </div>
+                                </div>
+                              
+                                <div class="row clearfix">
+                                  <div class="col-sm-6">
+                                    <label for="Leave_Type">Leave Type</label>
+                                    <select name="Leave_Type" id="Leave_Type" class="form-control" required>
+                                      <option value="">-- Select Leave Type --</option>
+                                      <option value="PL">Paid Leave (PL)</option>
+                                      <option value="HD">Half Day (HD)</option>
+                                    </select>
+                                    <span class="error-message" id="leave-type-error" style="color: red;font-size: 15px;"></span>
+                                  </div>
+                                </div>
+                              
+                                <div class="row clearfix">
+                                  <div class="col-sm-12">
+                                    <label for="Reason">Reason</label>
+                                    <input type="text" name="Reason" id="Reason" class="form-control" required>
+                                    <span class="error-message" id="reason-error" style="color: red;font-size: 15px;"></span>
+                                </div>
+                                </div>
+                              
+                                <div class="row clearfix m-t-20">
+                                  <div class="col-sm-12">
+                                    <button type="button" class="btn btn-primary" onclick="applyLeave()">Apply Leave</button>
+                                  </div>
+                                </div>
+                            </form>  
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="header">
+                            <h2>Leave Requests - Approval Pending</h2>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <table
+                                    class="table table-bordered table-striped table-hover leave_req_pending_list_grid dataTable table-responsive"
+                                    style="font-size: smaller">
+                                    <thead>
+                                        <tr id="leave_req_pending_row_key_head"></tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr id="leave_req_pending_row_key_foot"></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>Leave Requests - Action Taken</h2>
+                        </div>
+
+                        <div class="body">
+                            <div class="row clearfix">
+                                <table
+                                    class="table table-bordered table-striped table-hover leave_req_list_grid dataTable table-responsive"
+                                    style="font-size: smaller">
+                                    <thead>
+                                        <tr id="leave_req_row_key_head"></tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr id="leave_req_row_key_foot"></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Js -->
+        <script src="http://localhost:8000/js/pages/master/leave_request.js"></script>
+        <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
+
+
